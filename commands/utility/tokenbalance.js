@@ -16,10 +16,11 @@ module.exports = {
         .addUserOption(option =>
             option
                 .setName('user')
-                .setDescription('The person whose balance you want (leave blank to get own balance)')),
+                .setDescription('The person whose balance you want (leave blank to get own balance)')
+                .setRequired(false)),
         async execute(interaction) {
             let person = null;
-            if(interaction.options.getUser('user').username === null){
+            if(interaction.options.getUser('user') === null){
                 person = interaction.user.username;
             } else {
                 person = interaction.options.getUser('user').username;
