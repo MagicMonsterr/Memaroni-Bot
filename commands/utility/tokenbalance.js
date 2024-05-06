@@ -18,7 +18,12 @@ module.exports = {
                 .setName('user')
                 .setDescription('The person whose balance you want (leave blank to get own balance)')),
         async execute(interaction) {
-            const person = interaction.options.getUser('user').username ?? interaction.user.username;
+            let person = null;
+            if(interaction.options.getUser('user').username === null){
+                person = interaction.user.username;
+            } else {
+                person = interaction.options.getUser('user').username;
+            }
             try {
                 const token = await Tokens.findOne({ where: { name: person } });
                 if(token === null){
