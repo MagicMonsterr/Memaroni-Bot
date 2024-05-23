@@ -2,3 +2,4 @@ config.json
 node_modules
 Test.js
 databasetest.js
+database.sqlite

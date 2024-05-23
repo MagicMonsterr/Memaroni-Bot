@@ -25,7 +25,7 @@ module.exports = {
             try{
                 let index = null;
                 const reciever = message.mentions.users.first().username;
-                for(let i = 1; i < message.content.length; i++){
+		for(let i = 1; i < message.content.length; i++){
                     if(!(/\d/.test(message.content.at(i)))){
                         if(!(message.content.at(i) === '.')){
                             index = i;
@@ -61,8 +61,11 @@ module.exports = {
                     Tokens.update({ amount: recieverTokens+newTokens }, {where: {name: reciever }})
                 }
             } catch (error) {
-               message.channel.send('There was an error adding the tokens');
-               console.error(error);
+	       if(error.name === 'TypeError'){
+	       } else {
+               	message.channel.send('There was an error adding the tokens');
+               	console.error(error);
+	       }
             }
         }
     }
