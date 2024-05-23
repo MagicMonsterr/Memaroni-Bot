@@ -28,7 +28,7 @@ module.exports = {
             try {
                 const token = await Tokens.findOne({ where: { name: person } });
                 if(token === null){
-                    await interaction.reply(person + 'has not been added to the token database');
+                    await interaction.reply(person + ' has not been added to the token database');
                 } else {
                     const balance = token.get('amount');
                     if (balance === 1){
