@@ -1,5 +1,10 @@
 config.json
 node_modules
 Test.js
+<<<<<<< HEAD
 databasetest.js
 database.sqlite
+=======
+databasetest.js
+>>>>>>> 69cf78acd7afe455e298c3a1e171f3157b38627e
+*.backup
