@@ -20,7 +20,7 @@ function startPZServer() {
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setname('zomboidstart')
+        .setName('zomboidstart')
         .setDescription('Starts the zomboid server'),
         async execute(interaction) {
         await interaction.deferReply();
